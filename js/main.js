@@ -1,4 +1,3 @@
-$(document).ready(function () { 
 //Creare un array di oggetti: Ogni oggetto descriverà una bici da corsa
 //con le seguenti proprietà: nome e peso. Stampare a schermo la bici 
 //con peso minore utilizzando destructuring e template literal
@@ -24,7 +23,7 @@ $(document).ready(function () {
         "peso" : 20,
     }
 ] */
-var biciclette = [
+/*var biciclette = [
     {name: 'colnago', peso: 2},
     {name: 'bianchi', peso: 1},
     {name: 'coppi', peso: 5}
@@ -41,7 +40,7 @@ function findBicycles(bici) {
 
 console.log(biciclette.find(findBicycles));
 
-});
+});*/
 
 /* Creare un array di oggetti di squadre di calcio.
 Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti. 
@@ -51,7 +50,7 @@ Punti fatti e falli subiti.Infine usando la destrutturazione creiamo
 un nuovo array i cui elementi contengono solo nomi e falli subiti e 
 stampiamo tutto in console. */
 
-const squadre = [
+/*const squadre = [
     {
         "nome" : "squadra1",
         "punti" : 0,
@@ -89,8 +88,46 @@ squadre.forEach((element) => {
     element.falli = Math.floor(Math.random() * 10) + 1; 
     });
 
-    console.log(`$(element.nome) + $(element.falli)`);
+    console.log(`$(element.nome) + $(element.falli)`);*/
 
 
+//Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
+//La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
+//Usiamo i nuovi metodi degli array foreach o filter
 
+var array1 = ["a","b","c","d","e","f"];
+var primo = 2;
+var secondo = 6;
+var newArray = [];
+
+
+//metodo con forEach
+newArray = Prova(array1, primo,secondo);
+console.log(newArray);
+
+function Prova(array,a,b) {
+ var risultato = [];
+
+ array.forEach((element, index) => {
+     if (index > a && index < b) {
+         risultato.push(element);
+     }
+ });
+ return risultato;
+}
+
+
+//metodo con filter
+/*newArray = array1.filter((element, index) => {      (esempio di sintassi ottimizzata)
+    return index > a && index < b;
+ });*/
+
+newArray = provaFilter(array1, primo, secondo);
+console.log(newArray);
+
+function provaFilter (array,a,b) {
+    return array.filter((element, index) => {
+        return index > a && index < b;
+     });
+}
 
